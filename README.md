@@ -58,5 +58,5 @@ Enjoy!
 
 ## Testing
 ```
-curl -H "Content-Type: application/json" -X POST "https://2af29lk6gd.execute-api.us-east-1.amazonaws.com/prod" -d '{"object": "page", "entry": [{"messaging": [{"message": "TEST_MESSAGE"}]}]}'
+curl -H "Content-Type: application/json" -X POST "https://<GATEWAY_API_ID>.execute-api.<REGION>.amazonaws.com/prod" -d '{"object": "page", "entry": [{"messaging": [{"message": "TEST_MESSAGE"}]}]}'
 ```
