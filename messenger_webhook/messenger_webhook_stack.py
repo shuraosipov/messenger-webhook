@@ -6,6 +6,8 @@ from aws_cdk import core as cdk
 # being updated to use `cdk`.  You may delete this import if you don't need it.
 from aws_cdk import core
 
+from . import messenger_webhook
+
 
 class MessengerWebhookStack(cdk.Stack):
 
@@ -13,3 +15,4 @@ class MessengerWebhookStack(cdk.Stack):
         super().__init__(scope, construct_id, **kwargs)
 
         # The code that defines your stack goes here
+        messenger_webhook.MessengerWebhook(self, "Widgets")

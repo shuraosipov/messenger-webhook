@@ -1,7 +1,6 @@
+# Welcome to Facebook Webhook CDK Python project!
 
-# Welcome to your CDK Python project!
-
-This is a blank project for Python development with CDK.
+This is a project for Python development with CDK.
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
@@ -56,3 +55,8 @@ command.
  * `cdk docs`        open CDK documentation
 
 Enjoy!
+
+## Testing
+```
+curl -H "Content-Type: application/json" -X POST "https://2af29lk6gd.execute-api.us-east-1.amazonaws.com/prod" -d '{"object": "page", "entry": [{"messaging": [{"message": "TEST_MESSAGE"}]}]}'
+```
