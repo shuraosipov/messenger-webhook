@@ -19,7 +19,7 @@ class MessengerWebhook(core.Construct):
             code=lambda_.Code.from_asset("lambda/layer/lambda-layer"),
             compatible_runtimes=[lambda_.Runtime.PYTHON_3_8],
             license="Apache-2.0",
-            description="A layer with requests package"
+            description="A layer with requests and wit packages"
         )
 
         handler = lambda_.Function(self, "WidgetHandler",
@@ -29,7 +29,8 @@ class MessengerWebhook(core.Construct):
                                    environment=dict(
                                        BUCKET=bucket.bucket_name,
                                        VERIFY_TOKEN=get_secret_value(self, "VERIFY_TOKEN"),
-                                       PAGE_ACCESS_TOKEN=get_secret_value(self, "PAGE_ACCESS_TOKEN")
+                                       PAGE_ACCESS_TOKEN=get_secret_value(self, "PAGE_ACCESS_TOKEN"),
+                                       WIT_SERVER_ACCESS_TOKEN=get_secret_value(self, "WIT_SERVER_ACCESS_TOKEN"),
                                        ),
                                     layers=[layer]
                                    )
